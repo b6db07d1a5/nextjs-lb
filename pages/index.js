@@ -1,3 +1,7 @@
-import { default as index } from '../containers/indexContainer'
+import React from 'react'
 
-export default index
+export default function() {
+	return (
+		<div>fffggg</div>
+	)
+}
