@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function() {
 	return (
-		<div> author page </div>
+		<div> Author page test </div>
 	)
 }
