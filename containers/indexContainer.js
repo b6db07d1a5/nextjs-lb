@@ -1,48 +1,22 @@
-import { compose, withHandlers, withState } from 'recompose'
+import { compose, withHandlers, withState, withProps } from 'recompose'
 
-import page from '../hocs/page'
+import withLayout from '../hocs/withLayout'
 
-function CompA() {
-	return (
-		<div>
-			<span> CompAAA </span>
-		</div>
-	)
-}
+import IndexPage from '../components/IndexPage'
 
-function Enhance({ children }) {
-	return (
-			<div style={{width: 200, height: 50, backgroundColor: 'red'}}>
-				{children}
-			</div>
-	)
-
-}
-
-function gg(props) {
-  return (
-    <div>
-		<Enhance>
-			<CompA />
-		</Enhance>
-    	<button onClick={props.onClickTemp}> AAA </button>
-    	content {props.value}
-    </div>
-  )
-}
-
-function testLayout() {
-	return (
-		<div> aaaa </div>
-	)
-}
 
 export default compose(
-  withState('value', 'updateValue', ''),
+	withLayout,
+	withState('value', 'updateValue', ''),
+	withProps(function() {
+		return {
+			newProp: 'prop'
+		}
+	}),
   withHandlers({
     onClickTemp: props => event => {
       props.updateValue(props.value + 1)
     }
   })
-)(testLayout)
+)(IndexPage)
 
