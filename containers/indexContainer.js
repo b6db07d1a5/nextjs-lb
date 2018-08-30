@@ -19,7 +19,6 @@ function Enhance({ children }) {
 
 }
 
-
 function gg(props) {
   return (
     <div>
@@ -39,12 +38,11 @@ function testLayout() {
 }
 
 export default compose(
-  page,
   withState('value', 'updateValue', ''),
   withHandlers({
     onClickTemp: props => event => {
-      console.log('GGGGG')
       props.updateValue(props.value + 1)
     }
   })
 )(testLayout)
+

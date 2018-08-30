@@ -1,7 +1,3 @@
-import React from 'react'
+import authorContainer from '../containers/authorContainer'
 
-export default function() {
-	return (
-		<div> Author page test </div>
-	)
-}
+export default authorContainer
